@@ -1,0 +1,62 @@
+# @host = 127.0.0.1:7401
+@host = 127.0.0.1:4000
+
+GET http://{{host}}
+###
+GET http://{{host}}/user/getUser/0x4B04b0bD233E5cf6EBf7E293124143eaf1077f23
+###
+
+GET http://{{host}}/user/getUser/0x9fb4c2998c6fc904128c204a9c19404e1a3b6be9
+###
+
+POST http://{{host}}/user/signUp
+content-type: application/json
+
+{
+    "address": "_ad_54fdw4edsg6",
+    "username": "user2",
+    "profPic": null,
+    "nfts": [],
+    "nftCollections": []
+}
+###
+
+
+POST http://{{host}}/user/createNft
+content-type: application/json
+
+{
+    "ipfs_meta": {
+     "tokenId": "21",
+     "minPrice": 0,
+     "uri": "https://asdddd.com/asdd.json",
+     "signature": "0xa454999fcab9e8ee27fe86e7dc2e5fbdf473240ee2d1ddd417b61c84bc23979c0a09bbca79b9e6a3477b267cf99205967b592164a1438a85d93606ba44ddb45e1c"
+ },
+    "_user_id": "" 
+}
+###
+
+POST http://{{host}}/user/createColl
+content-type: application/json
+
+{
+    "featuredImage": "noimage.png",
+    "name": "Deep Oscion",
+    "url": "deep-oscion",
+    "discription": "This use for testing purpose",
+    "owner": "0x4b04b0bd233e5cf6ebf7e293124143eaf1077f23"
+}
+###
+
+# IPFS
+
+GET https://ipfs.infura.io/ipfs/QmSL7qKkLy1vQjbaT1qrEpoFQdMYPcTKJ65d8BHNhoz79U
+###
+
+
+GET https://ipfs.infura.io/ipfs/QmaezWMUN65z1qDgaFVUVS4ByesXzwN4dFki37Cnz4eps7
+
+###
+
+
+GET http://localhost:4000/user/getCollection
